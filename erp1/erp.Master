@@ -1,0 +1,389 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="erp.master.cs" Inherits="erp1.erp" %>
+<%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+<%@ Register assembly="DevExpress.Web.Bootstrap.v17.1, Version=17.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.Bootstrap" tagprefix="dx" %>
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta name="viewport" content="width=device-width, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0" />
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+   
+ 
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title></title>
+     
+      <style type="text/css">
+
+
+
+
+
+
+
+
+
+         .panel-default>.panel-heading {
+    color: #333;
+    background-color: #ffffff;
+    border-color: #ddd;
+    /* margin-top: 12px; */
+    /* margin: 13px; */
+}
+      .newBotton{
+          position:relative;
+         top: 43vh;
+         left: 4vw;
+      } 
+    
+      .DeleteButton{
+          position:relative;
+          left: 0.5vw;
+      }
+a:focus, a:hover {
+
+    text-decoration: none;
+}
+
+.dxtcLite_Material.dxtc-top > .dxtc-stripContainer .dxtc-rightIndent, .dxtcLite_Material.dxtc-top > .dxtc-stripContainer .dxtc-leftIndent{
+    max-width:1px !important
+}
+
+.dxcvCard_Material, .dxcvFlowCard_Material, .dxcvEmptyCard_Material, .dxcvEmptyHiddenCard_Material{
+        padding: 0px 0px 24px;
+}
+   
+
+      .updateButton{
+      position:relative;right:85%
+      }
+          .newBotton1 {
+           position:relative;
+         top: 10%;
+         left: 0%;
+          }
+           
+         .nav-stacked > li.active > a, .nav-stacked  > li > a:hover { border: none; color: #4285F4 !important; background: transparent; }
+        .nav-stacked > li > a::after { content: ""; background: #4285F4; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
+        .nav-stacked > li.active > a::after, .nav-stacked > li:hover > a::after { transform: scale(1); }
+
+       .tab-pane { padding: 15px 0; }
+       .tab-content{padding:20px !important;margin-top:-1%}
+
+
+       .card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px ; margin-bottom: 30px; }
+        body{ background:#EDECEC !important ;padding:0px}
+ /*
+    DEMO STYLE
+*/
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+
+    background: #65aceb;
+    border: none;
+    border-radius: 0;
+     margin-left: 1%;
+    margin-right: 1%;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+.wrapper {
+    display: flex;
+    align-items: stretch;
+    perspective: 1500px;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: #65aceb;
+    color: #fff;
+    transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
+    transform-origin: bottom left;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+    transform: rotateY(100deg);
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #65aceb;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+   
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+#sidebar ul li a:hover {
+    color: #7386D5;
+    background: #fff;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #fff;
+    background: #65aceb;
+}
+
+a:hover{
+    cursor:pointer;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
+    content: '\e259';
+    display: block;
+    position: absolute;
+    right: 20px;
+    font-family: 'Glyphicons Halflings';
+    font-size: 0.6em;
+}
+a[aria-expanded="true"]::before {
+    content: '\e260';
+}
+
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.download {
+    background: #fff;
+    color: #7386D5;
+}
+
+a.article, a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+#content {
+   
+    min-height: 100vh;
+    transition: all 0.3s;
+    width: 100%;
+    margin-left: 1px;
+}
+
+#sidebarCollapse {
+    width: 40px;
+    height: 40px;
+    background: #65aceb;
+}
+
+#sidebarCollapse span {
+    width: 80%;
+    height: 2px;
+    margin: 0 auto;
+    display: block;
+    background: #fff;
+    transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+    transition-delay: 0.2s;
+}
+
+#sidebarCollapse span:first-of-type {
+    transform: rotate(45deg) translate(2px, 2px);
+}
+#sidebarCollapse span:nth-of-type(2) {
+    opacity: 0;
+}
+#sidebarCollapse span:last-of-type {
+    transform: rotate(-45deg) translate(1px, -1px);
+}
+
+
+#sidebarCollapse.active span {
+    transform: none;
+    opacity: 1;
+    margin: 5px auto;
+}
+
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+@media (max-width: 768px) {
+
+        
+
+    
+    #sidebar {
+        margin-left: -250px;
+        transform: rotateY(90deg);
+    }
+    #sidebar.active {
+        margin-left: 0;
+        transform: none;
+    }
+    #sidebarCollapse span:first-of-type,
+    #sidebarCollapse span:nth-of-type(2),
+    #sidebarCollapse span:last-of-type {
+        transform: none;
+        opacity: 1;
+        margin: 5px auto;
+    }
+    #sidebarCollapse.active span {
+        margin: 0 auto;
+    }
+    #sidebarCollapse.active span:first-of-type {
+        transform: rotate(45deg) translate(2px, 2px);
+    }
+    #sidebarCollapse.active span:nth-of-type(2) {
+        opacity: 0;
+    }
+    #sidebarCollapse.active span:last-of-type {
+        transform: rotate(-45deg) translate(1px, -1px);
+    }
+
+}
+
+   
+    </style>
+     <link rel="stylesheet" type="text/css" href="Styles/Style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"/>
+
+
+</head>
+<body >
+   <div class="wrapper">
+  <!-- Sidebar Holder -->
+  <nav id="sidebar">
+  
+
+    <ul class="list-unstyled components">
+      <li>
+        <a href="NaturalPerson.aspx" > <span class="glyphicon glyphicon-user"></span> Natural person</a>
+           <a href="LegalPerson.aspx" > <i class="fa fa-building"></i> Legal person</a>
+            <a href="Good.aspx" ><i class="fas fa-store"></i> Good</a>
+      </li>
+      <li class="active">
+        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"> <span class="glyphicon glyphicon-cog"></span> Settings</a>
+        <ul class="collapse list-unstyled" id="homeSubmenu">
+          <li><a href="Adresse.aspx"> <span class="glyphicon glyphicon-home"></span> Adresse</a></li>
+            <li><a href="Event.aspx"> <span class="glyphicon glyphicon-calendar"></span> Event</a></li> 
+          <li><a href="Document.aspx"> <span class="glyphicon glyphicon-credit-card"></span> Document d'identite </a></li>	
+            <li><a href="Staff.aspx"> <span class="	glyphicon glyphicon-move"></span> staff </a></li>	
+             <li><a href="GoodType.aspx"> <i class="fas fa-store"></i>  Good Type </a></li>	
+        </ul>
+      </li>
+  
+     
+     
+    </ul>
+
+  </nav>
+
+  <!-- Page Content Holder -->
+  <div id="content">
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+
+        <div class="navbar-header">
+          <button type="button" id="sidebarCollapse" class="navbar-btn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+        </div>
+      </div>
+    </nav>
+
+    
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+   </div>
+</div>
+		   
+
+
+
+	
+  
+  <script>
+      $(document).ready(function () {
+          $("#sidebarCollapse").on("click", function () {
+              $("#sidebar").toggleClass("active");
+              $(this).toggleClass("active");
+          });
+      });
+    </script>
+</body>
+</html>

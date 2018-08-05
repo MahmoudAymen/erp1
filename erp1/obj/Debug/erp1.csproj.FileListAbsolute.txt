@@ -1,0 +1,7 @@
+C:\Users\aymen\Documents\Visual Studio 2013\Projects\erp1\erp1\bin\erp1.dll.config
+C:\Users\aymen\Documents\Visual Studio 2013\Projects\erp1\erp1\bin\erp1.dll
+C:\Users\aymen\Documents\Visual Studio 2013\Projects\erp1\erp1\bin\erp1.pdb
+C:\Users\aymen\Documents\Visual Studio 2013\Projects\erp1\erp1\obj\Debug\erp1.dll.licenses
+C:\Users\aymen\Documents\Visual Studio 2013\Projects\erp1\erp1\obj\Debug\erp1.dll
+C:\Users\aymen\Documents\Visual Studio 2013\Projects\erp1\erp1\obj\Debug\erp1.pdb
+C:\Users\aymen\Documents\Visual Studio 2013\Projects\erp1\erp1\obj\Debug\erp1.csprojResolveAssemblyReference.cache
